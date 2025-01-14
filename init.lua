@@ -95,7 +95,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle File Explorer' })
-vim.keymap.set('n', '<leader>th', '<cmd>split | terminal<CR>', { desc = 'Open Horizontal Terminal' })
+-- vim.keymap.set('n', '<leader>tt', '<cmd>split | terminal<CR>', { desc = 'Open Horizontal Terminal' })
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
@@ -216,6 +216,19 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
     },
   },
+
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = function()
+      require('toggleterm').setup {
+        open_mapping = [[<leader>tt]],
+        direction = 'horizontal', -- Options: 'vertical', 'horizontal', 'tab', 'float'
+        shade_terminals = true,
+      }
+    end,
+  },
+
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
