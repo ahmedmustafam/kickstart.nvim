@@ -67,6 +67,34 @@ require('lazy').setup({
     },
   },
 
+  {
+    -- amongst your other plugins
+    {
+      'akinsho/toggleterm.nvim',
+      version = '*',
+      opts = {
+        direction = 'float',
+        open_mapping = [[<C-\>]],
+      },
+      config = true,
+    },
+    -- or
+    -- {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
+  },
+
+  {
+    'rmagatti/auto-session',
+    lazy = false,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+      -- log_level = 'debug',
+    },
+  },
+
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
