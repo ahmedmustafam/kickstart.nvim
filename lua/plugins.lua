@@ -95,6 +95,17 @@ require('lazy').setup({
     },
   },
 
+  {
+    'mattn/emmet-vim',
+    config = function()
+      vim.g.user_emmet_install_global = 0
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'html', 'css', 'javascriptreact', 'typescriptreact' },
+        command = 'EmmetInstall',
+      })
+    end,
+  },
+
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -584,6 +595,9 @@ require('lazy').setup({
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        markdown = { 'prettier' },
         html = { 'prettier' },
         css = { 'prettier' },
       },

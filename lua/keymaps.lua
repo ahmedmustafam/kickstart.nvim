@@ -14,6 +14,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle File Explorer' })
+vim.g.user_emmet_leader_key = '<C-e>' -- Changing leader key for emmet
 -- vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true, desc = 'Open Horizontal Terminal' })
 -- vim.keymap.set('t', '<leader>q', '<C-\\><C-n>:q<CR>', { noremap = true, silent = true })
 -- TIP: Disable arrow keys in normal mode
